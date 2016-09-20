@@ -13,8 +13,8 @@ alias h='history 100'
 alias l.='ls -aFd --color=auto'
 alias ll='ls -aFl --color=auto'
 alias ls='ls -aFGh --color=auto'
-alias dcleani='docker rmi  --force $(docker images -f "dangling=true" -q)'
-alias dcleanc='docker rm -vf $(docker ps -f "status=exited")'
+alias dcleani='docker rmi  -f $(docker images -qf "dangling=true")'
+alias dcleanc='docker rm -vf $(docker ps -qf "status=exited")'
 alias dlogin="docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWD --email=$DOCKER_HUB_EMAIL"
 
 # Enable some Bash 4 features when possible:
