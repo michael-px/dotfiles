@@ -6,13 +6,17 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+export SYSTEMD_PAGER=
 
 # User specific aliases and functions
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
 alias h='history 100'
 alias l.='ls -aFd --color=auto'
 alias ll='ls -aFl --color=auto'
-alias ls='ls -aFGh --color=auto'
+alias ls='ls -FGh --color=auto'
 alias dcleani='docker rmi  -f $(docker images -qf "dangling=true")'
 alias dcleanc='docker rm -vf $(docker ps -qf "status=exited")'
 alias dlogin="docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWD --email=$DOCKER_HUB_EMAIL"
