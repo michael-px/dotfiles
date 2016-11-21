@@ -33,11 +33,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
-# Shortcuts
-alias cdl="cd /usr/local"
-alias cdb="cd /usr/local/bin "
-
-alias g="git"
 alias h="history"
 alias j="jobs"
 alias v="vim"
@@ -46,9 +41,8 @@ alias fs="stat -f \"%z bytes\""
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 alias undopush="git push -f origin HEAD^:master"
 
-alias localip="ipconfig getifaddr en1"
+alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 alias dcleanc='docker rm -vf $(docker ps -aq -f "status=exited")'
 alias dcleani='docker rmi -f $(docker images -aq -f "dangling=true")'
