@@ -20,6 +20,7 @@ alias ls='ls -FGh --color=auto'
 alias dcleani='docker rmi -f $(docker images -aq -f "dangling=true")'
 alias dcleanc='docker rm -vf $(docker ps -aq -f "status=exited")'
 alias dlogin="docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWD --email=$DOCKER_HUB_EMAIL"
+alias dnet="docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`

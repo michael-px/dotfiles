@@ -46,3 +46,4 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 alias dcleanc='docker rm -vf $(docker ps -aq -f "status=exited")'
 alias dcleani='docker rmi -f $(docker images -aq -f "dangling=true")'
+alias dnet="docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
